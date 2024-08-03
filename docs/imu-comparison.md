@@ -18,7 +18,7 @@ These factors are meant to give a quick indication as to what to expect from var
 For clarification purposes: If 3 out of 10 chips are dead on arrival or die during early use, we refer to that as poor build quality.
 
 ## General Recommendations
-At the moment, LSM6DSV is the best IMU in terms of performance offering consistent +45min resets. The BMI160 / BMI270 are the best price-to-performance options. Neither LSM or BMI requires a stable magnetic environment, making them a suitable option for everyone. BNO085 IMU is heavily promoted by the Slime CrowdSupply project but it's an outdated model, with performance comparable to the budget BMI models, yet at a huge price premium, making BNO085 the worst price-to-performance option. 
+At the moment, LSM6DSV is the best IMU in terms of performance offering consistent +45min resets. The BMI160 / BMI270 are the best price-to-performance options. Neither LSM or BMI requires a stable magnetic environment, making them a suitable option for everyone. BNO085 IMU is heavily promoted by the Slime CrowdSupply project but it's an outdated model, with performance comparable to the budget BMI models without having a perfect magnetic enviroment to play. Yet BNO085 is several times more expensive over the budget BMI IMUs, making BNO085 the worst price-to-performance option. 
 
 When referring to the order of the IMUs on this page, bear in mind that they're listed roughly in order of best to worst.
 
@@ -33,8 +33,6 @@ IMU offers very good reset times, works in bad magnetic enviroments, the best op
 
 
 
-Score: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
-
 |Pros          |Cons                                   |
 |--------------|---------------------------------------|
 |Accurate               |Low availability              |
@@ -44,24 +42,22 @@ Score: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"
 
 LSM6DSV IMU chips and SlimeVR trackers using this IMU can be bought at [Panda Trackers](https://discord.gg/VPjtkujaVs).
 
-This IMU has been tested for over 3 months, very good performance has been confirmed by over 50 users already. 
-LSM6DSV sfusion firmware is stable and has been merged to the main SlimeVR branch.
+LSM6DSV IMU has been tested for over 3 months, very good performance has been confirmed by over 50 users already. 
+LSM sfusion firmware is stable and has been merged to the main SlimeVR branch now.
 
 ---
 ## LSM6DSO
 Not enough data about this IMU model. 
-It's a budget IMU option with a possible performance above the BMI270 but below LSM6DSV. Not enough data to confirm this.
+It's a budget IMU option with a possible performance above the BMI160 / 270 models but below LSM6DSV. Not enough data to confirm results.
 
 ---
 ## BMI270
 The BMI270 is a relatively new and <b>experimental</b> IMU for DIY SlimeVR.
-It seems to perform significantly better than the BMI160 while still being affordable.
+It seems to perform better than the BMI160 while still being affordable.
 
 |Reset time |Cost  |Availability|Build quality|
 |:---------:|:----:|:----------:|:-----------:|
 |20 - 30min |~$3.8 |Sufficient  |Great        |
-
-Score: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o" ></i>
 
 |Pros                   |Cons                                                            |
 |-----------------------|----------------------------------------------------------------|
@@ -69,8 +65,6 @@ Score: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"
 |Reliable               | Only available in module form from a single source             |
 |Smooth                 | Experimental, still in testing                                 |
 |Single time calibration| Performance data not taken from survey                         |
-
-> Please note, that the main branch of SlimeVR firmware does not support this IMU yet, and running a custom fork is required.
 
 ---
 ## BMI160
@@ -85,8 +79,6 @@ Reset times and yaw accuracy with a magnetometer will depend on your build quali
 |:---------:|:----:|:----------:|:-----------:|
 |10 - 20min |~$1.50|Sufficient  |Good         |
 
-Score: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o" ></i>
-
 |Pros                   |Cons                                                            |
 |-----------------------|----------------------------------------------------------------|
 |Cheap                  | [Requires manual calibration the first time](#imu-calibration) |
@@ -96,13 +88,11 @@ Score: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"
 
 ---
 ## BNO085
-This is the IMU used in CrowdSupply Slimes. The performance is very unrealiable with very wide range from worst to best reset times. CrowdSupply trackers are sold with a magnetometer turned off because 99% of users will not be able to use that feature having bad magnetic enviroment at home. This will cut the best case reset times down to 20 min, bringing performance down to budget IMU models like BMI. Unlike budget BMI IMUs, BNO085 suffers from additional problems. IMU drift is very high, tracking may even fail moving too fast. For example, BNO085 can drift in just 2 minutes, even stop tracking, if you will start jumping or tap feet while dancing. As a result, this IMU should be avoided for fitness and dance use.   
+This is the IMU used in CrowdSupply Slimes. The performance is very unrealiable with a very wide range from worst to best reset times. CrowdSupply trackers are sold with a magnetometer turned off because 99% of users will not be able to use that feature having a bad magnetic enviroment at home. This will cut the best case reset times down to 20 min, bringing performance down to budget IMU models like BMI. Unlike budget BMI IMUs, BNO085 suffers from additional issues. IMU drift is very high and tracking may even completely fail moving too fast. For example, BNO085 can drift in just 2 minutes, even stop tracking, if you will start jumping or tap feet while dancing. As a result, this IMU should be avoided for dance and fitness use.   
 
 |Reset time |Cost |Availability|Build quality|
 |:---------:|:---:|:----------:|:-----------:|
 |3 - 20 min|~$13 |Sufficient  |Excellent    |
-
-Score: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
 
 |Pros          |Cons                                   |
 |--------------|---------------------------------------|
@@ -113,7 +103,7 @@ Score: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"
 |        |Requires warmup before use                                       |
 
 
-> Please note, there is a lot of misinformation being spread by the SlimeVR CrowdSupply project having an interest selling the exact BNO085 IMU model and trackers.
+> Please note, there is a lot of misinformation being spread by the SlimeVR CrowdSupply project having an interest selling the exact BNO085 IMU model and trackers. Other information may be outdated, with BNO085 looking good 1-2 years ago. Because even 3-20min were much better than just up to 5 min resets with MPU6500 and BMI 160 models running old Slime firmware. BMI 160 / 270 performance has been improved greatly with software updates reaching similar 10-20min resets in 2024. And LSM6DSV taking the best IMU spot with no competition offering 40-60min resets in 2024. 
 
 ---
 ## MPU9250
@@ -126,13 +116,12 @@ The MPU9250 (currently ran in several modes) is a newer installment of the MPU l
 |:---------:|:---:|:----------:|:-----------:|
 |10 - 40 min|~$7  |Insufficient|Mediocre     |
 
-Score: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o" ></i><i class="fa fa-star-o" ></i>
-
+ 
 |Pros             |Cons                                                           |
 |-----------------|---------------------------------------------------------------|
 |Affordable       |Very prone to counterfeit/DOA units                            |
 |Smooth           |Sensitive to bad magnetic environments                         |
-|Reliable         |[Requires manual calibration the first time](#imu-calibration) |
+|Reliable         |  |
 
 `Comment: Finding legitimate MPU9250s has become exceedingly difficult due to counterfeits and DOA IMUs. Buy at your own risk.`
 
@@ -149,14 +138,13 @@ The drift time of this IMU may be a slight improvement over the MPU6050.
 |:---------:|:---:|:----------:|:-----------:|
 |5 - 10 min |~$1  |Sufficient  |Mediocre     |
 
-Score: <i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o" ></i><i class="fa fa-star-o" ></i>
-
+ 
 |Pros             |Cons                                         |
 |-----------------|---------------------------------------------|
 |Affordable       |High drift rate                              |
 |Available        |More expensive than the 6050 counterpart     |
 |Smooth           |Failure rate inconsistent                    |
-|                 |[Calibration on each start](#imu-calibration)|
+|                 | |
 
 `Comment: Tracking slightly better than the MPU6050.`
 
@@ -171,13 +159,12 @@ The MPU6050 will get you started with SlimeVR for cheap.
 |:---------:|:----:|:----------:|:-----------:|
 |1 - 5 min  |~$1.04|Sufficient  |Poor         |
 
-Score: <i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o" ></i>
-
+ 
 |Pros             |Cons                                         |
 |-----------------|---------------------------------------------|
 |Cheap            |High drift rate                              |
 |High availability|High failure rate                            |
-|                 |[Calibration on each start](#imu-calibration)|
+|                 | |
 
 `Comment: Order more than you need because of the higher failure rate, it is not uncommon to find 2 to 3 bad chips in a batch.`
 
@@ -186,7 +173,7 @@ Score: <i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-sta
 
 ## What's the difference between an IMU with a magnetometer (9 DOF) and an IMU without a magnetometer (6 DOF)?
 
-IMUs with a magnetometer work like a compass and use the Earth's magnetic field as a reference point to eliminate gyroscope drift, however they require a stable magnetic environment or else they will perform erratically. IMUs without a magnetometer don't require a stable magnetic environment, but are prone to gyroscope drift over time due to being unable to differentiate sensor noise from actual movement, and so will slowly spin in the yaw axis over time. For SlimeVR's purposes, neither is implicitly better or worse than the other. The BNO085, which is the IMU official SlimeVR trackers will use, is used in 6DOF mode and yet performs the best out of all supported IMUs, for example.
+IMUs with a magnetometer work like a compass and use the Earth's magnetic field as a reference point to eliminate gyroscope drift, however they require a stable magnetic environment or else they will perform erratically. IMUs without a magnetometer don't require a stable magnetic environment, but are prone to gyroscope drift over time due to being unable to differentiate sensor noise from actual movement, and so will slowly spin in the yaw axis over time. For SlimeVR's purposes, neither is implicitly better or worse than the other. The BNO085, which is the IMU official SlimeVR trackers will use, is used in 6DOF mode with magnetometer turned off because majority of homes will have a bad magnetic enviroment which is coused by anything metal (from construction material in concrete foundation, floor heating to simply having PC, TVs and speakers in the same room).
 
 ## How can I check if I have an acceptable magnetic environment?
 
